@@ -128,5 +128,7 @@ int main() {
     printf("Comparação das cartas (Atributo: População):\n Carta 1 - %s = %d \n Carta 2 - %s = %d \n", NomeCity01, Populacao01, NomeCity02, Populacao02);
     printf("A carta vencedora é (Carta 1 = 1, Carta 2 = 2, Empate = 3): %d\n", CartaVencedora);
 
+
+
     return 0;
 }
