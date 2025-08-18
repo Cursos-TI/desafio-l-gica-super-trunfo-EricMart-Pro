@@ -37,12 +37,9 @@ int main() {
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
     // utilize o código do primeiro desafio
-    
-
     // Exemplo:
     // printf("Digite o código da cidade: ");
     // scanf("%s", codigo);
-    // 
     // (Repita para cada propriedade)
     //Aqui eu utlizei printf e scanf para exibir solicitações e guarda-las nas variáveis.
     printf("Digite a letra do Estado da carta 1: "); //utilizei printf para enviar uma mensagem solicitando a letra do Estado.
@@ -50,10 +47,10 @@ int main() {
     //utilizei printf e scanf para basicamente as mesmas finalidades abaixo.
 
     printf("Digite o código da carta 1: ");
-    scanf("%s", &Codigo01);
+    scanf("%s", Codigo01);
 
     printf("Digite o nome da cidade da carta 1: ");
-    scanf("%s", &NomeCity01);
+    scanf("%s", NomeCity01);
 
     printf("Digite o número de habitantes da carta 1: ");
     scanf("%lu", &Populacao01);
@@ -75,10 +72,10 @@ int main() {
     scanf(" %c", &Estado02);
 
     printf("Digite o código da carta 2: ");
-    scanf("%s", &Codigo02);
+    scanf("%s", Codigo02);
 
     printf("Digite o nome da cidade da carta 2: ");
-    scanf("%s", &NomeCity02);
+    scanf("%s", NomeCity02);
 
     printf("Digite o número de habitantes da carta 2: ");
     scanf("%lu", &Populacao02);
@@ -107,20 +104,29 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
-    if (poulação01 > população02) {
+    int CartaVencedora;
+     if (Populacao01 > Populacao02) {
 
         printf("Cidade 1 tem maior população.\n");
+        CartaVencedora = 1;
 
-    }else {
-        printf("Cidade 2 tem maior população.\n")
+    } else if (Populacao01 < Populacao02) {
+        printf("Cidade 2 tem maior população.\n");
+        CartaVencedora = 2;
+        
+    } else {
+
+        printf("Empate no atributo populacao.\n");
+        CartaVencedora = 3;
     }
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("Comparação das cartas (Atributo: População):\n Carta 1 - %s = %d \n Carta 2 - %s = %d \n", NomeCity01, Populacao01, NomeCity02, Populacao02);
+    printf("A carta vencedora é (Carta 1 = 1, Carta 2 = 2, Empate = 3): %d\n", CartaVencedora);
 
     return 0;
 }
