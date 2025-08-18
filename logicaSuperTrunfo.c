@@ -104,13 +104,13 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
-    int CartaVencedora;
-     if (Populacao01 > Populacao02) {
+    int CartaVencedora;//Essa é a variavél armazenará os valores que irão representar um resultado diferente de acordo com a comparação.
+     if (Populacao01 > Populacao02) { //Usei if-else para imprimir diferentes mensagens para diferentes resultados das comparações
 
         printf("Cidade 1 tem maior população.\n");
         CartaVencedora = 1;
 
-    } else if (Populacao01 < Populacao02) {
+    } else if (Populacao01 < Populacao02) { //Aqui eu tive que incluir outra comparação para poder incluir uma mensagem no caso de empate mais afrente
         printf("Cidade 2 tem maior população.\n");
         CartaVencedora = 2;
         
@@ -125,8 +125,8 @@ int main() {
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-    printf("Comparação das cartas (Atributo: População):\n Carta 1 - %s = %d \n Carta 2 - %s = %d \n", NomeCity01, Populacao01, NomeCity02, Populacao02);
-    printf("A carta vencedora é (Carta 1 = 1, Carta 2 = 2, Empate = 3): %d\n", CartaVencedora);
+    printf("Comparação das cartas (Atributo: População):\n Carta 1 - %s = %d \n Carta 2 - %s = %d \n", NomeCity01, Populacao01, NomeCity02, Populacao02);//Usei printf para exibir a quantidade de habitantes de cada carta, utilizando também especificadores de formato tipo string e tipo int
+    printf("A carta vencedora é (Carta 1 = 1, Carta 2 = 2, Empate = 3): %d\n", CartaVencedora);//Coloquei printf para exibir o resultado da comparação do atributo população de cada carta e coloquei entre parênteses os números que representam cada tipo de resultado da comparação
 
 
 
