@@ -97,36 +97,139 @@ int main() {
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    int opcao; //Essa variavel "opção", vai armazenar o número correspondente a um dos atributos que o usuário digitar
+    //Exemplo: Temos números de 1 até 6 representando cada um dos atributos disponíveis para comparar como, população (N°1), Área (N°2), PIB (N°3), Número de pontos turísticos (N°4), Densidade Populacional (N°5) e PIB per Capita (N°6)
+    //Utilizei printf para imprimir o menu com os números representando cada atributo
+    printf("Escolha um atributo para fazer a comparação: \n");
+    printf("1. POPULAÇÃO\n");
+    printf("2. ÁREA\n");
+    printf("3. PIB\n");
+    printf("4. NÚMERO DE PONTOS TURÍSTICOS\n");
+    printf("5. DENSIDADE POPULACIONAL\n");
+    printf("6. PIB PER CAPITA\n");
+    printf("Escolha(Digite o número correspondente ao atributo): \n");
+    scanf("%d", &opcao); //o scanf vai armazenar na variavél opcao o número que o usuário digitar como um valor inteiro
+
 
     // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-    int CartaVencedora;//Essa é a variavél armazenará os valores que irão representar um resultado diferente de acordo com a comparação.
-     if (Populacao01 > Populacao02) { //Usei if-else para imprimir diferentes mensagens para diferentes resultados das comparações
+    //Se o usuário digitar 1, o case 1 vai ser ativado e fará a comparação do atributo escolhido entre as duas cartas através do if, do else e do else-if
+    //Temos cases com números de 1 a 6, cada número dos cases a seguir se refere a um valor específico da variavél opcao 
+    //Dentro de cada case tem uma função if, else-if e else, as quais estão responsáveis por fazer a comparação entre os atributos da carta 1 e carta 2.
+    switch(opcao) {
+        case 1:
+        printf("Comparação do atributo população: \n");
+        if(Populacao01 > Populacao02) { //O if fará uma comparação para descobrir se a população da carta 1 é maior e, se for, imprimirá o nome das cidades, o valor do atributo da carta 1, o valor do atributo da carta 2, uma mensagem dizendo que a carta 1 tem maior valor no atributo selecionado pelo usuário no menu e outra dizendo que ela venceu
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("População da cidade 1: %d - População da cidade 2: %d\n");
+            printf("Carta 1 tem maior população\n");
+            printf("Carta 1 Venceu\n");
+        }else if(Populacao01 < Populacao02) { //O else-if é responsável por fazer uma segunda comparação, para que assim abra portas para imprimir uma mensagem no caso de empate através do else. Se a comparação do else-if for verdadeira (se a população da carta 1 for menor que a população da carta 2), imprimirá o nome das cidades, o valor do atributo da carta 1, o valor do atributo da carta 2, uma mensagem dizendo que a carta 2 tem maior valor no atributo selecionado pelo usuário no menu e outra dizendo que ela venceu
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("População da cidade 1: %d - População da cidade 2: %d\n", Populacao01, Populacao02);
+            printf("Carta 2 tem maior população\n");
+            printf("Carta 2 Venceu\n");
+        }else{ //Caso a comparação do if seja falso e do else-if também seja, o else vai imprimir o nome das cidades, os valores de ambas as cartas correspondente ao atributo escolhido e uma mensagem de empate, uma vez que, o if, nesse caso, seja para descobrir se o atributo da carta 1 tem valor maior que o atributo da carta 2, e o else-if, seja para descobrir se o atributo da carta 1 tem valor menor que o atributo da carta 2
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("População da cidade 1: %d - População da cidade 2: %d\n", Populacao01, Populacao02);
+            printf("Empate\n");
+        }
+        break;
+        case 2:
+        printf("Comparação do atributo área:\n");
+        if(Area01 > Area02) {
+             printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+             printf("Área da cidade 1: %d - Área da cidade 2: %d\n", Area01, Area02);
+            printf("Carta 1 tem área maior\n");
+            printf("Carta 1 Venceu\n");
+        } else if( Area01 < Area02) {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+             printf("Área da cidade 1: %d - Área da cidade 2: %d\n", Area01, Area02);
+            printf("Carta 2 tem área maior\n");
+            printf("Carta 2 Venceu\n");
+        } else {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+             printf("Área da cidade 1: %d - Área da cidade 2: %d\n", Area01, Area02);
+            printf("Empate\n");
+        }
+        break;
+        case 3:
+        printf("Comparação do atributo PIB: \n");
+        if(PIB01 > PIB02) {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB da cidade 1: %d - PIB da cidade 2: %d\n", PIB01, PIB02);
+            printf("Carta 1 tem maior PIB\n");
+            printf("Carta 1 Venceu\n");
+        } else if(PIB01 < PIB02) {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB da cidade 1: %d - PIB da cidade 2: %d\n", PIB01, PIB02);
+            printf("Carta 2 tem maior PIB");
+            printf("Carta 2 Venceu\n");
+        }else {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB da cidade 1: %d - PIB da cidade 2: %d\n", PIB01, PIB02);
+            printf("Empate\n");
+        }
+        break;
+        case 4:
+        printf("Comparação do atributo de Pontos Turísticos");
+        if(PontosTuristicos01 > PontosTuristicos02) {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Número de pontos turísticos da cidade 1: %d - Número de pontos turísticos da cidade 2: %d\n", PontosTuristicos01, PontosTuristicos02);
+            printf("Carta 1 tem mais pontos turísticos\n");
+            printf("Carta 1 Venceu\n");
+        } else if(PontosTuristicos01 < PontosTuristicos02) {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Número de pontos turísticos da cidade 1: %d - Número de pontos turísticos da cidade 2: %d\n", PontosTuristicos01, PontosTuristicos02);
+            printf("Carta 2 tem mais pontos turísticos\n");
+            printf("Carta 2 Venceu\n");
+        } else {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Número de pontos turísticos da cidade 1: %d - Número de pontos turísticos da cidade 2: %d\n", PontosTuristicos01, PontosTuristicos02);
+            printf("Empate\n");
+        }
+        break;
+        case 5:
+        printf("Comparação do atributo Densidade Populacional: \n");
+        if(DensidadePopulacional01 > DensidadePopulacional02){ //Se a densidade populacional da carta 1 for maior que a da carta 2, então imprimirá o nome das cidades como sempre, porém, imprimirá uma mensagem dizendo que a carta 2 tem menor densidade populacional e outra dizendo que ela venceu, pois, quem tem menor valor na densidade populacional vence.
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Densidade populacional da cidade 1: %d - Densidade populacional da cidade 2: %s\n", DensidadePopulacional01, DensidadePopulacional02);
+        printf("Carta 2 tem menor densidade populacional\n");
+        printf("Carta 2 Venceu\n");
+        }else if(DensidadePopulacional01 < DensidadePopulacional02) { //Se a densidade populacional da carta 1 for menor que a da segunda carta, então imprimirá o nome das cidades, os valores de densidade populacional de ambas as cartas, uma mensagem dizendo que a carta 1 tem menor densidade e outra dizendo que a carta 1 venceu.
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Densidade populacional da cidade 1: %d - Densidade populacional da cidade 2: %s\n", DensidadePopulacional01, DensidadePopulacional02);
+            printf("Carta 1 tem menor densidade populacional\n");
+            printf("Carta 1 Venceu\n");
+        }else {//Se ambas as densidades, tiverem o mesmo valor, então o else vai imprimir o nome das cidades, os valores do atributo de ambas as cartas e outra mensagem informando empate.
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("Densidade populacional da cidade 1: %d - Densidade populacional da cidade 2: %s\n", DensidadePopulacional01, DensidadePopulacional02);
+            printf("Empate\n");
+        }
+        break; //O break vai marcar o fim da mensagem para cada case
+        case 6:
+        printf("Comparação do atributo PIB per Capita: \n");
+        if(PIBperCapita01 > PIBperCapita02){
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB per Capita da cidade 1: %d - PIB per Capita da cidade 2: %d\n", PIBperCapita01, PIBperCapita02);
+            printf("Carta 1 tem maior PIB per Capita\n");
+            printf("Carta 1 Venceu\n");
+        } else if(PIBperCapita01 < PIBperCapita02){
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB per Capita da cidade 1: %d - PIB per Capita da cidade 2: %d\n", PIBperCapita01, PIBperCapita02);
+            printf("Carta 2 tem maior PIB per Capita\n");
+            printf("Carta 2 Venceu\n");
+        } else {
+            printf("Nome da cidade 1: %s - Nome da cidade 2: %s\n", NomeCity01, NomeCity02);
+            printf("PIB per Capita da cidade 1: %d - PIB per Capita da cidade 2: %d\n", PIBperCapita01, PIBperCapita02);
+            printf("Empate\n");
+        }
+        break;
+        default: //O default vai ser responsável por imprimir uma mensagem, caso o usuário escolha um valor que não esteja dentro do menu. A mensagem será "Opção inválida, tente novamente".
+        printf("Opção inválida, tente novamente");
+        break;
 
-        printf("Cidade 1 tem maior população.\n");
-        CartaVencedora = 1;
-
-    } else if (Populacao01 < Populacao02) { //Aqui eu tive que incluir outra comparação para poder incluir uma mensagem no caso de empate mais afrente
-        printf("Cidade 2 tem maior população.\n");
-        CartaVencedora = 2;
-        
-    } else {
-
-        printf("Empate no atributo populacao.\n");
-        CartaVencedora = 3;
     }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-    printf("Comparação das cartas (Atributo: População):\n Carta 1 - %s = %d \n Carta 2 - %s = %d \n", NomeCity01, Populacao01, NomeCity02, Populacao02);//Usei printf para exibir a quantidade de habitantes de cada carta, utilizando também especificadores de formato tipo string e tipo int
-    printf("A carta vencedora é (Carta 1 = 1, Carta 2 = 2, Empate = 3): %d\n", CartaVencedora);//Coloquei printf para exibir o resultado da comparação do atributo população de cada carta e coloquei entre parênteses os números que representam cada tipo de resultado da comparação
+     
 
 
 
